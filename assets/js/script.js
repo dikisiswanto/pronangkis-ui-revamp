@@ -8,7 +8,7 @@
 $(document).ready(function () {
   $('table.datatables').DataTable({
     language: {
-      url: 'http://cdn.datatables.net/plug-ins/1.10.18/i18n/Indonesian.json'
+      url: 'https://cdn.datatables.net/plug-ins/1.10.18/i18n/Indonesian.json'
     },
     dom: 'Bfrtip',
     buttons: ['excelHtml5', 'csvHtml5', {
