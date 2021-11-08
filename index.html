@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Nunjucks + Tailwind Starter Page</title>
+  <title>Open Data Pronangkis</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,16 +15,20 @@
   <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 
-<body class="bg-blue-50 font-main text-gray-600 drawer">
+<body class="bg-gray-200 font-main text-gray-600 drawer">
   <input id="drawer" type="checkbox" class="drawer-toggle">
   <section class="drawer-content flex flex-col">
-    <div class="container max-w-[1200px] mx-auto px-3">
-      <section class="py-5">
-        <div class="navbar shadow-2xl bg-primary text-neutral-content rounded-lg">
-          <a href="./" class="flex-none px-2 mx-2 items-center" title="ke halaman depan" aria-label="ke halaman depan">
-            <img src="./assets/img/logo.png" class="h-12 auto" />
+    <div class="container max-w-[1024px] mx-auto px-3">
+      <section class="pt-5 mb-5 card overflow-visible shadow-xl">
+        <div class="bg-white rounded-lg py-4 px-5 rounded-t-lg hidden lg:flex space-x-5 items-center">
+          <img src="./assets/img/logo.png" alt="Logo OpenData" class="h-20 w-auto">
+          <h1 class="font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-l from-primary to-secondary">OpenData Pronangkis</h1>
+        </div>
+        <div class="navbar shadow-xl bg-primary text-neutral-content rounded-lg lg:rounded-b-lg lg:rounded-t-none">
+          <a href="./" class="flex-none px-2 items-center lg:hidden" title="ke halaman depan" aria-label="ke halaman depan">
+            <img src="./assets/img/logo.png" alt="Logo OpenData" class="h-12 w-auto">
           </a>
-          <nav class="flex-1 px-2 mx-2">
+          <nav class="flex-1">
             <ul class="items-stretch hidden lg:flex">
               <li><a href="" class="btn btn-ghost rounded-lg">Beranda</a></li>
               <li><a href="" class="btn btn-ghost rounded-lg">Open Data</a></li>
@@ -53,56 +57,146 @@
           </div>
         </div>
       </section>
-      <section class="flex flex-col lg:flex-row lg:space-x-5 space-y-5 lg:space-y-0 pb-5">
-        <aside class="w-full lg:w-1/3">
-          <div class="card rounded-lg shadow-2xl bg-white collapse collapse-arrow">
-            <input type="checkbox">
-            <h2 class="font-bold text-primary collapse-title">APA DAN BAGAIMANA OPEN DATA?</h2>
-            <div class="collapse-content px-5 space-y-3">
-              <p>Data terbuka adalah data yang dapat secara bebas digunakan, digunakan ulang dan didistribusi ulang oleh siapapun - hanya patuh, umumnya, pada keharusan untuk menyebutkan siapa penciptanya dan berbagi dengan lisensi yang sama...</p>
-              <a href="" class="btn btn-primary">Selengkapnya <i class="fa fa-chevron-right ml-2"></i></a>
-            </div>
+      <aside class="w-full">
+        <div class="collapse collapse-arrow bg-white rounded-lg shadow-xl">
+          <input type="checkbox">
+          <h2 class="font-bold collapse-title text-primary">APA DAN BAGAIMANA OPEN DATA?</h2>
+          <div class="collapse-content px-5 space-y-3">
+            <p>Data terbuka adalah data yang dapat secara bebas digunakan, digunakan ulang dan didistribusi ulang oleh siapapun - hanya patuh, umumnya, pada keharusan untuk menyebutkan siapa penciptanya dan berbagi dengan lisensi yang sama...</p>
+            <a href="" class="btn btn-primary">Selengkapnya <i class="fa fa-chevron-right ml-2"></i></a>
           </div>
-        </aside>
-        <main class="lg:w-2/3 w-full">
-          <div class="card shadow-2xl bg-white p-5 space-y-5">
-            <div id="chart-container"></div>
-            <div class="overflow-y-auto">
-              <table class="table table-compact max-w-full datatables">
-                <thead>
-                  <tr>
-                    <th>Kode Rekening</th>
-                    <th>Uraian</th>
-                    <th>2018</th>
-                    <th>2017</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>5</td>
-                    <td>BELANJA</td>
-                    <td class="angka">2,205,489,940,400.00</td>
-                    <td class="angka">2,161,336,557,890.00</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>PENDAPATAN</td>
-                    <td class="angka">2,056,183,267,071.00</td>
-                    <td class="angka">2,078,242,751,510.00</td>
-                  </tr>
-                  <tr>
-                    <td>6.1</td>
-                    <td>PENERIMAAN PEMBIAYAAN DAERAH</td>
-                    <td class="angka">177,941,673,329.00</td>
-                    <td class="angka">103,203,806,380.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+      </aside>
+      <section class="flex flex-col py-5 space-y-5">
+        <div class="card shadow-xl bg-white p-5 space-y-5">
+          <div id="chart-container"></div>
+        </div>
+        <div class="card shadow-2xl bg-white p-5 space-y-5">
+          <div class="overflow-y-auto">
+            <table class="table table-compact max-w-full datatables">
+              <thead>
+                <tr>
+                  <th>Kode Rekening</th>
+                  <th>Uraian</th>
+                  <th>2018</th>
+                  <th>2017</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5</td>
+                  <td>BELANJA</td>
+                  <td class="angka">2,205,489,940,400.00</td>
+                  <td class="angka">2,161,336,557,890.00</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>PENDAPATAN</td>
+                  <td class="angka">2,056,183,267,071.00</td>
+                  <td class="angka">2,078,242,751,510.00</td>
+                </tr>
+                <tr>
+                  <td>6.1</td>
+                  <td>PENERIMAAN PEMBIAYAAN DAERAH</td>
+                  <td class="angka">177,941,673,329.00</td>
+                  <td class="angka">103,203,806,380.00</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </main>
-      </section>
+        </div>
 
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+
+          <div class="card shadow-xl bg-white">
+            <figure>
+              <img src="https://picsum.photos/id/1005/400/250">
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title"><a href="#" class="link link-hover transition">(Analisis) Anggaran Kemiskinan dalam Postur APBD Kab Bantul Tahun 2014 - 2016</a>
+              </h2>
+              <div class="badge badge-secondary mb-2">20 Feb 2021</div>
+              <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente.</p>
+              <div class="justify-start card-actions">
+                <a href="" class="link link-primary link-hover">Baca Selengkapnya <i class="fa fa-chevron-right ml-2"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-xl bg-white">
+            <figure>
+              <img src="https://picsum.photos/id/1005/400/250">
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title"><a href="#" class="link link-hover transition">(Analisis) Anggaran Kemiskinan dalam Postur APBD Kab Bantul Tahun 2014 - 2016</a>
+              </h2>
+              <div class="badge badge-secondary mb-2">20 Feb 2021</div>
+              <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente.</p>
+              <div class="justify-start card-actions">
+                <a href="" class="link link-primary link-hover">Baca Selengkapnya <i class="fa fa-chevron-right ml-2"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-xl bg-white">
+            <figure>
+              <img src="https://picsum.photos/id/1005/400/250">
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title"><a href="#" class="link link-hover transition">(Analisis) Anggaran Kemiskinan dalam Postur APBD Kab Bantul Tahun 2014 - 2016</a>
+              </h2>
+              <div class="badge badge-secondary mb-2">20 Feb 2021</div>
+              <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente.</p>
+              <div class="justify-start card-actions">
+                <a href="" class="link link-primary link-hover">Baca Selengkapnya <i class="fa fa-chevron-right ml-2"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-xl bg-white">
+            <figure>
+              <img src="https://picsum.photos/id/1005/400/250">
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title"><a href="#" class="link link-hover transition">(Analisis) Anggaran Kemiskinan dalam Postur APBD Kab Bantul Tahun 2014 - 2016</a>
+              </h2>
+              <div class="badge badge-secondary mb-2">20 Feb 2021</div>
+              <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente.</p>
+              <div class="justify-start card-actions">
+                <a href="" class="link link-primary link-hover">Baca Selengkapnya <i class="fa fa-chevron-right ml-2"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-xl bg-white">
+            <figure>
+              <img src="https://picsum.photos/id/1005/400/250">
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title"><a href="#" class="link link-hover transition">(Analisis) Anggaran Kemiskinan dalam Postur APBD Kab Bantul Tahun 2014 - 2016</a>
+              </h2>
+              <div class="badge badge-secondary mb-2">20 Feb 2021</div>
+              <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente.</p>
+              <div class="justify-start card-actions">
+                <a href="" class="link link-primary link-hover">Baca Selengkapnya <i class="fa fa-chevron-right ml-2"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <footer class="rounded-t-lg bg-primary text-neutral-content shadow-2xl px-5 py-5 flex flex-col lg:flex-row space-y-3 text-center lg:text-left">
+        <div class="flex-1 space-y-2">
+          <a href="" class="link link-hover text-xs">Klik disini untuk masuk dan beraktivitas dalam ruang tertutup login</a>
+          <p class="text-sm">&copy; 2021 - OpenData Pronangkis. Hakcipta dilindungi undang-undang</p>
+        </div>
+        <div class="flex-none space-x-3">
+          <a href=""><i class="fab fa-facebook"></i></a>
+          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fa fa-envelope"></i></a>
+          <a href=""><i class="fa fa-phone"></i></a>
+        </div>
+      </footer>
     </div>
   </section>
   <div class="drawer-side">
