@@ -19,9 +19,9 @@ module.exports = {
   daisyui: {
     themes: [{
       flamboyan: {
-        primary: '#EF4444',
+        primary: '#10B981',
         /* Primary color */
-        'primary-focus': '#DC2626',
+        'primary-focus': '#059669',
         /* Primary color - focused */
         'primary-content': '#ffffff',
         /* Foreground content color to use on primary color */
