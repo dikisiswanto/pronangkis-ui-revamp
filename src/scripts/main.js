@@ -4,7 +4,7 @@
 $(document).ready(() => {
   $('table.datatables').DataTable({
     language: {
-      url: 'http://cdn.datatables.net/plug-ins/1.10.18/i18n/Indonesian.json',
+      url: 'https://cdn.datatables.net/plug-ins/1.10.18/i18n/Indonesian.json',
     },
     dom: 'Bfrtip',
     buttons: [
