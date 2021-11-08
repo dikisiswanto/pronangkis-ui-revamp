@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Nunjucks + Tailwind Starter Page</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.3.1/css/highcharts.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+</head>
+
+<body class="bg-blue-50 font-main text-gray-600 drawer">
+  <input id="drawer" type="checkbox" class="drawer-toggle">
+  <section class="drawer-content flex flex-col">
+    <div class="container max-w-[1200px] mx-auto px-3">
+      <section class="py-5">
+        <div class="navbar shadow-2xl bg-primary text-neutral-content rounded-lg">
+          <a href="./" class="flex-none px-2 mx-2 items-center" title="ke halaman depan" aria-label="ke halaman depan">
+            <img src="./assets/img/logo.png" class="h-12 auto" />
+          </a>
+          <nav class="flex-1 px-2 mx-2">
+            <ul class="items-stretch hidden lg:flex">
+              <li><a href="" class="btn btn-ghost rounded-lg">Beranda</a></li>
+              <li><a href="" class="btn btn-ghost rounded-lg">Open Data</a></li>
+
+              <div class="dropdown dropdown-end">
+                <li tabindex="0" class="btn btn-ghost rounded-btn">Anggaran Publik <i class="fa fa-chevron-down ml-2"></i></li>
+                <ul tabindex="0" class="p-2 shadow-2xl menu dropdown-content bg-base-100 rounded-lg w-64 text-gray-600">
+                  <li><a href="">Visualisasi Belanja dan Pendapatan Dinas</a></li>
+                  <li><a href="">Tabular Data</a></li>
+                </ul>
+              </div>
+              <div class="dropdown dropdown-end">
+                <li tabindex="0" class="btn btn-ghost rounded-btn">Grafik Anggaran <i class="fa fa-chevron-down ml-2"></i></li>
+                <ul tabindex="0" class="p-2 shadow-2xl menu dropdown-content bg-base-100 rounded-lg w-64 text-gray-600">
+                  <li><a href="">Pendapatan</a></li>
+                  <li><a href="">Pengurangan Resiko Bencana</a></li>
+                  <li><a href="">Penanggulangan Kemiskinan</a></li>
+                </ul>
+              </div>
+              <li><a href="" class="btn btn-ghost rounded-lg">Analisis Anggaran</a></li>
+
+            </ul>
+          </nav>
+          <div class="lg:hidden">
+            <label for="drawer" class="btn btn-ghost drawer-button"><i class="fa fa-bars"></i></label>
+          </div>
+        </div>
+      </section>
+      <section class="flex flex-col lg:flex-row lg:space-x-5 space-y-5 lg:space-y-0 pb-5">
+        <aside class="w-full lg:w-1/3">
+          <div class="card rounded-lg shadow-2xl bg-white collapse collapse-arrow">
+            <input type="checkbox">
+            <h2 class="font-bold text-primary collapse-title">APA DAN BAGAIMANA OPEN DATA?</h2>
+            <div class="collapse-content px-5 space-y-3">
+              <p>Data terbuka adalah data yang dapat secara bebas digunakan, digunakan ulang dan didistribusi ulang oleh siapapun - hanya patuh, umumnya, pada keharusan untuk menyebutkan siapa penciptanya dan berbagi dengan lisensi yang sama...</p>
+              <a href="" class="btn btn-primary">Selengkapnya <i class="fa fa-chevron-right ml-2"></i></a>
+            </div>
+          </div>
+        </aside>
+        <main class="lg:w-2/3 w-full">
+          <div class="card shadow-2xl bg-white p-5 space-y-5">
+            <div id="chart-container"></div>
+            <div class="overflow-y-auto">
+              <table class="table table-compact max-w-full datatables">
+                <thead>
+                  <tr>
+                    <th>Kode Rekening</th>
+                    <th>Uraian</th>
+                    <th>2018</th>
+                    <th>2017</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>5</td>
+                    <td>BELANJA</td>
+                    <td class="angka">2,205,489,940,400.00</td>
+                    <td class="angka">2,161,336,557,890.00</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>PENDAPATAN</td>
+                    <td class="angka">2,056,183,267,071.00</td>
+                    <td class="angka">2,078,242,751,510.00</td>
+                  </tr>
+                  <tr>
+                    <td>6.1</td>
+                    <td>PENERIMAAN PEMBIAYAAN DAERAH</td>
+                    <td class="angka">177,941,673,329.00</td>
+                    <td class="angka">103,203,806,380.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </section>
+
+    </div>
+  </section>
+  <div class="drawer-side">
+    <label for="drawer" class="drawer-overlay"></label>
+    <ul class="menu w-80 bg-white overflow-y-auto">
+      <span class="font-bold text-lg py-3 px-5 border-b-2 border-primary mb-2"><img src="./assets/img/logo.png" alt="logo" class="h-12 w-auto"></span>
+      <li><a href="" class="rounded-lg">Beranda</a></li>
+      <li><a href="" class="rounded-lg">Open Data</a></li>
+      <li><a href="" class="rounded-lg">Anggaran Publik</a></li>
+      <ul>
+        <li><a href="" class="rounded-lg">Visualisasi Belanja dan Pendapatan Dinas</a></li>
+        <li><a href="" class="rounded-lg">Tabular Data</a></li>
+      </ul>
+      <li><a href="" class="rounded-lg">Grafik Anggaran</a></li>
+      <ul>
+        <li><a href="" class="rounded-lg">Pendapatan</a></li>
+        <li><a href="" class="rounded-lg">Pengurangan Resiko Bencana</a></li>
+        <li><a href="" class="rounded-lg">Penanggulangan Kemiskinan</a></li>
+      </ul>
+      <li><a href="" class="rounded-lg">Analisis Anggaran</a></li>
+
+    </ul>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.1.0/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.3.1/highcharts.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.3.1/highcharts-3d.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.3.1/modules/exporting.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="./assets/js/script.min.js"></script>
+</body>
+
+</html>
