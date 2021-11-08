@@ -1,0 +1,51 @@
+{% set navs = [
+  {
+    name: 'Beranda',
+    link: '',
+    submenu: []
+  },
+  {
+    name: 'Open Data',
+    link: '',
+    submenu: []
+  },
+  {
+    name: 'Anggaran Publik',
+    link: '',
+    submenu: [
+      'Visualisasi Belanja dan Pendapatan Dinas',
+      'Tabular Data'
+    ]
+  },
+  {
+    name: 'Grafik Anggaran',
+    link: '',
+    submenu: [
+      'Pendapatan',
+      'Pengurangan Resiko Bencana',
+      'Penanggulangan Kemiskinan'
+    ]
+  },
+  {
+    name: 'Analisis Anggaran',
+    link: '',
+    submenu: []
+  }
+] -%}
+
+<div class="drawer-side">
+  <label for="drawer" class="drawer-overlay"></label>
+  <ul class="menu w-80 bg-white overflow-y-auto">
+    <span class="font-bold text-lg py-3 px-5 border-b-2 border-primary mb-2"><img src="./assets/img/logo.png" alt="logo" class="h-12 w-auto"></span>
+    {% for nav in navs -%}
+      <li><a href="{{ nav.link }}" class="rounded-lg">{{ nav.name }}</a></li>
+      {% if nav.submenu.length -%}
+        <ul>
+          {% for subnav in nav.submenu -%}
+            <li><a href="" class="rounded-lg">{{ subnav }}</a></li>
+          {%- endfor %}
+        </ul>
+      {%- endif %}
+    {%- endfor %}
+  </ul>
+</div>

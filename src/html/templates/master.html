@@ -3,23 +3,31 @@
 <head>
   <title>{{ title }}</title>
   {% block meta %}
-    {% include "templates/meta.html" %}
-  {% endblock %}
+    {% include "templates/meta.html" -%}
+  {%- endblock %}
   {% block style -%}
+    {% include "partials/css-vendor.html" -%}
     <link rel="stylesheet" href="./assets/css/style.min.css">
   {%- endblock %}
 </head>
-<body>
+<body class="bg-blue-50 font-main text-gray-600 drawer">
   {% block body -%}
-    {% block header -%}
-      {% include "partials/header.html" -%}
-    {%- endblock %}
-    {% block content -%}{%- endblock %}
-    {% block footer -%}
-      {% include "partials/footer.html" -%}
-    {%- endblock %}
+    <input id="drawer" type="checkbox" class="drawer-toggle">
+    <section class="drawer-content flex flex-col">
+      <div class="container max-w-[1200px] mx-auto px-3">
+        {% block header -%}
+          {% include "partials/header.html" -%}
+        {%- endblock %}
+        {% block content -%}{%- endblock %}
+        {% block footer -%}
+          {% include "partials/footer.html" -%}
+        {%- endblock %}
+      </div>
+    </section>
+    {% include "partials/drawer.html" -%}
   {%- endblock %}
   {% block scripts -%}
+    {% include "partials/js-vendor.html" -%}
     <script src="./assets/js/script.min.js"></script>
   {%- endblock %}
 </body>
