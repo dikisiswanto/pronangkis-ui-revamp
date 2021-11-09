@@ -3,7 +3,19 @@
 @import 'tailwindcss/utilities';
 
 .card {
-  @apply rounded-lg;
+  @apply rounded-lg border shadow-sm bg-white;
+}
+
+.btn {
+  @apply border-b-4;
+
+  &-primary {
+    @apply border-primary-focus;
+  }
+
+  &-secondary {
+    @apply border-secondary-focus;
+  }
 }
 
 .dataTables_wrapper {

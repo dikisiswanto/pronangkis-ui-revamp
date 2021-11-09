@@ -1,13 +1,23 @@
-<section class="pt-5 mb-5 card overflow-visible shadow-xl">
-  <div class="bg-white rounded-lg py-4 px-5 rounded-t-lg hidden lg:flex space-x-5 items-center">
-    <img src="./assets/img/logo.png" alt="Logo OpenData" class="h-20 w-auto">
-    <h1 class="font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-l from-primary to-secondary">OpenData Pronangkis</h1>
+<section class="pt-5 lg:pt-0 mb-5 card overflow-visible">
+  <div class="bg-white py-4 px-5 hidden lg:flex space-x-5 items-center justify-between">
+    <div class="flex flex-1 space-x-5 items-center">
+      <img src="./assets/img/logo.png" alt="Logo OpenData" class="h-20 w-auto">
+      <h1 class="font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-l from-primary to-secondary">OpenData Pronangkis</h1>
+    </div>
+    <div class="flex-1 text-xs flex-wrap text-right">
+      <p class="text-base text-primary-focus font-bold">IDEA</p>
+      <div class="divide-y space-y-1">
+        <p><i class="fa fa-map-marker-alt mr-2 text-primary"></i> Jl. Tunjung No.10, Baciro, Kec. Gondokusuman, D.I Yogyakarta, 55225</p>
+        <p><i class="fa fa-phone-alt mr-2 text-primary"></i> +62 (274) 488427</p>
+        <p><i class="fa fa-envelope mr-2 text-primary"></i> idea@perkumpulanidea.or.id</p>
+      </div>
+    </div>
   </div>
-  <div class="navbar shadow-xl bg-primary text-neutral-content rounded-lg lg:rounded-b-lg lg:rounded-t-none">
+  <div class="navbar border-b-4 border-primary-focus lg:py-1 min-h-[2.5rem] bg-primary text-neutral-content rounded-lg lg:rounded-b-lg lg:rounded-t-none">
     <a href="./" class="flex-none px-2 items-center lg:hidden" title="ke halaman depan" aria-label="ke halaman depan">
       <img src="./assets/img/logo.png" alt="Logo OpenData" class="h-12 w-auto">
     </a>
-    {% include "partials/nav.html" -%}
+    {% include "partials/navbar.html" -%}
 
     <div class="lg:hidden">
       <label for="drawer" class="btn btn-ghost drawer-button"><i class="fa fa-bars"></i></label>

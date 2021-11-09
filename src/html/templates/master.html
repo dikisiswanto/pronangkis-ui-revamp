@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="./assets/css/style.min.css">
   {%- endblock %}
 </head>
-<body class="bg-gray-200 font-main text-gray-600 drawer">
+<body class="bg-gray-100 font-main text-gray-600 drawer">
   {% block body -%}
     <input id="drawer" type="checkbox" class="drawer-toggle">
-    <section class="drawer-content flex flex-col">
-      <div class="container max-w-[1024px] mx-auto px-3">
+    <section class="drawer-content">
+      <div class="container max-w-[1024px] mx-auto px-3 flex flex-col min-h-screen">
         {% block header -%}
           {% include "partials/header.html" -%}
         {%- endblock %}

@@ -1,37 +1,4 @@
-{% set navs = [
-  {
-    name: 'Beranda',
-    link: '',
-    submenu: []
-  },
-  {
-    name: 'Open Data',
-    link: '',
-    submenu: []
-  },
-  {
-    name: 'Anggaran Publik',
-    link: '',
-    submenu: [
-      'Visualisasi Belanja dan Pendapatan Dinas',
-      'Tabular Data'
-    ]
-  },
-  {
-    name: 'Grafik Anggaran',
-    link: '',
-    submenu: [
-      'Pendapatan',
-      'Pengurangan Resiko Bencana',
-      'Penanggulangan Kemiskinan'
-    ]
-  },
-  {
-    name: 'Analisis Anggaran',
-    link: '',
-    submenu: []
-  }
-] -%}
+{% from "templates/menu-items.html" import navs -%}
 
 <div class="drawer-side">
   <label for="drawer" class="drawer-overlay"></label>

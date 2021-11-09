@@ -1,0 +1,25 @@
+{% set title = 'Blog' -%}
+{% extends "templates/master.html" -%}
+
+{% block content -%}
+  <section class="flex-1 flex flex-col space-y-5 lg:space-y-0 lg:flex-row gap-x-5">
+    <div class="card lg:w-2/3">
+      <div class="card-body space-y-2 px-6 pt-4 pb-8">
+        <h2 class="card-title border-b pb-2">ARTIKEL TERKINI</h2>
+        <div class="divide-y">
+          {% for i in range(0, 4) %}
+            <div class="group py-3">
+              <h3 class="text-lg font-bold"><a href="./opendata.html" class="link link-hover">(Analisis) Anggaran Kemiskinan dalam Postur APBD Kab Bantul Tahun 2014 - 2016</a></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, minima sunt, iste vitae ab id cupiditate modi earum dignissimos deserunt animi debitis in, consectetur sed nostrum ducimus veritatis incidunt aut....</p>
+              <a href="./opendata.html" class="link link-primary inline-block">Selengkapnya...</a>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="btn-group">
+
+        </div>
+      </div>
+    </div>
+    {% include "partials/sidebar.html" -%}
+  </section>
+{%- endblock %}
